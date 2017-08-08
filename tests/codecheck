@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Script to run codecheck
+rm -rf .codecheck
+git clone --depth 1 https://${GITHUB_USERNAME}:${API_TOKEN}@github.com/EliLillyCo/CIRR_HerokuCI.git .codecheck
+.codecheck/runtests

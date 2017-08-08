@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# --- USAGE
+# -- Add your test commands/scripts to prod_test and ci_test under package.json.
+# -- When this script runs (any Heroku test environment - i.e. CI)
+#    the script will attempt to run production and/or CI tests based on the branch that triggered the CI process.
+# -- For example a pull request push would trigger CI tests only
+#    but a push to the master branch would trigger production tests as well as CI.
+
+# this command exits the script with non-zero status if any test fails (Heroku CI classes this as test failure)
+set -e
+
+echo $HEROKU_TEST_RUN_BRANCH
+
+# if we're on the master branch, then run production tests (i.e. codecheck)
+if [ "$HEROKU_TEST_RUN_BRANCH" == "master" ]
+then
+    echo "Production branch detected, running long tests..."
+    npm run prod_test
+fi
+
+echo "Run CI tests..."
+npm run ci_test

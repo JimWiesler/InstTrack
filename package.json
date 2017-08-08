@@ -1,0 +1,48 @@
+{
+  "name": "insttrack",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Status tracking",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "tests/run-ci",
+    "gulp": "./gulpfile.js",
+    "build": "gulp",
+    "lint": "gulp lint",
+    "unit-test": "gulp mocha",
+    "prestart-parallel": "npm run unit-test",
+    "start-parallel": "npm-run-all --parallel build start",
+    "ci_test": "gulp mocha && gulp lint",
+    "prod_test": "tests/codecheck",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "author": "Jim Wiesler <wiesler@lilly.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimWiesler/InstTrack.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimWiesler/InstTrack/issues"
+  },
+  "engines": {
+    "node": "8.1.4",
+    "npm": "4.0.5"
+  },
+  "homepage": "https://github.com/JimWiesler/InstTrack#readme",
+  "dependencies": {
+    "cirrus-auth-module": "^1.1.1",
+    "compression": "^1.7.0",
+    "debug": "^2.6.8",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "handlebars": "^4.0.10",
+    "handsontable-pro": "git+https://user26a4135d4ed9:P3SszP3KpUBx@my.handsontable.com/handsontable/handsontable-pro.git",
+    "helmet": "^3.8.1",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3"
+  },
+  "devDependencies": {}
+}

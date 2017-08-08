@@ -1,0 +1,23 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.padding-top{
+  padding-top: 20px;
+}
+
+.padding-bottom{
+  padding-bottom: 20px;
+}
+
+.padding-left{
+  padding-left: 20px;
+}
+
+.padding-right{
+  padding-right: 20px;
+}

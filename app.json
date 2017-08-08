@@ -1,0 +1,136 @@
+{
+	"name": "InstTrack",
+	"description": "Instrument tracking input.",
+	"repository": "https://github.com/JimWiesler/InstTrack",
+	"logo": "https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png",
+	"template": "https://github.com/EliLillyCo/CIRR_WEB_ACCELERATOR",
+	"keywords": [
+		"node",
+		"express",
+		"handlebars"
+	],
+	"stack": "heroku-16",
+	"env": {
+		"NEW_RELIC_APP_NAME": {
+			"required": true,
+			"description": "Please put your application name here. This does not have to be the applications URL."
+		},
+		"NODE_ENV": {
+			"value": "development",
+			"description": "Do not change this value. In Heroku this needs to be set to *production*",
+			"required": true
+		},
+		"OPENID_RESP_TYPE": {
+			"value": "id_token",
+			"description": "Do not change this value. This need to be set for the authentication flow to work",
+			"required": false
+		},
+		"OPENID_SERV": {
+			"value": "https://federate-qa.xh1.lilly.com",
+			"description": "Do not change this value. This need to be set for the authentication flow to work",
+			"required": false
+		},
+		"OPENID_SCOPE": {
+			"value": "openid auth_web",
+			"description": "Do not change this value. This need to be set for the authentication flow to work",
+			"required": false
+		},
+		"OPENID_JWKS_URI": {
+			"value": "https://federate-qa.xh1.lilly.com/pf/JWKS",
+			"description": "Do not change this value. This need to be set for the authentication flow to work",
+			"required": false
+		},
+		"OPENID_CALLBACK": {
+			"value": "/auth/ping/callback",
+			"description": "Do not change this value. This need to be set for the authentication flow to work",
+			"required": false
+		},
+		"AUTH_REQUIRED": {
+			"value": "false",
+			"description": "Change to true if you want authentication. You will need to fill out the variables below for authentication to work. Leave false if you do not need authentication.",
+			"required": true
+		},
+		"AUTH_TYPE": {
+			"value": "ping",
+			"description": "This sets the authentication flow to the Pre-Production Flow.",
+			"required": true
+		},
+		"OPENID_ISSUER": {
+			"value": "https://federate-qa.xh1.lilly.com",
+			"description": "Sets the Issuer for the authentication",
+			"required": true
+		},
+		"OPENID_TOKEN_URL": {
+			"value": "https://federate-qa.xh1.lilly.com/as/token.oauth2",
+			"description": "A secure, high entropy key. You can copy a value at: http://randomkeygen.com/"
+		},
+		"OPENID_USER_INFO_URL": {
+			"value": "https://federate-qa.xh1.lilly.com/idp/userinfo.openid",
+			"description": "A secure, high entropy key. You can copy a value at: http://randomkeygen.com/"
+		},
+		"DISABLE_AUTH_LOGS": {
+			"value": "false",
+			"description": "Default value is False. Set to True if you do not want the auth flow to output logs to the console",
+			"required": false
+		},
+		"OPENID_NONCE_SECRET": {
+			"required": false,
+			"description": "A secure, high entropy key. You can copy a value at: http://randomkeygen.com/"
+		},
+		"OPENID_NONCE": {
+			"required": false,
+			"description": "A secure, high entropy key. You can copy a value at: http://randomkeygen.com/"
+		},
+		"OPENID_CLIENT_ID": {
+			"required": false,
+			"description": "Your auth client id. This can be found by looking for your `BUSINESS AREA` here: https://cirr-heroku-auth-standards.herokuapp.com."
+		},
+		"COOKIE_SECRET": {
+			"required": false,
+			"description": "A secure, high entropy key. You can copy a value at: http://randomkeygen.com/"
+		}
+	},
+	"addons": [
+		"papertrail:fixa",
+		"newrelic:hawke"
+	],
+	"formation": {
+		"web": {
+			"quantity": 1,
+			"size": "Standard-1X"
+		}
+	},
+	"environments": {
+		"test": {
+			"scripts": {
+				"test": "npm test"
+			},
+			"env": {
+				"API_TOKEN": {
+					"required": true
+				},
+				"GITHUB_USERNAME": {
+					"required": true
+				}
+			},
+			"formation": {
+				"web": {
+					"quantity": 1,
+					"size": "Standard-1X"
+				}
+			},
+			"buildpacks": [
+			 {
+				 "url": "heroku/nodejs"
+			 },
+			 {
+				 "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/jvm-common.tgz"
+			 }
+		 ],
+			"addons": []
+		}
+	},
+	"buildpacks": [{
+		"url": "heroku/nodejs"
+	}]
+}
