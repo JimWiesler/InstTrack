@@ -57,7 +57,17 @@ gulp.task('browserify', () => {
         .pipe(source('bundle.js')) // this is the output file name
         .pipe(gulp.dest('./lib/public/js/')); // and this is where it ends up
 });
-
+// gulp.task('browserify', () => {
+//   gulp.src('src/client-controllers/main.js', { read: false })
+//     .pipe(browserify({
+//       insertGlobals: true,
+//       debug: true,
+//       standalone: 'main' }))
+//    .transform('babelify')
+    // .bundle()
+    // .pipe(source('bundle.js')) // this is the output file name
+    // .pipe(gulp.dest('./lib/public/js/')); // and this is where it ends up
+// });
 /*  -----------------------  */
 
 /* IMAGE COMPRESSION TASKS  */
@@ -155,7 +165,7 @@ gulp.task('watch', () => {
   gulp.watch(['./src/public/scss/**/*.scss'], ['sass']);
   gulp.watch(['./src/client-controllers/**/*.js'], ['browserify']);
   gulp.watch(['./src/public/vendor/**/*.js'], ['minify-js-vendor']);
-  gulp.watch(['./src/public/js/**/*.js'], ['minify-js-vendor']);
+  gulp.watch(['./src/public/js/**/*.js'], ['minify-js']);
   gulp.watch(['./src/public/vendor/**/*.css'], ['minify-css-vendor']);
 });
 

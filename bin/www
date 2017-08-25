@@ -41,7 +41,7 @@ function normalizePort(val) {
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-console.log(`Server port: ${port}`)
+console.log(`Server port: ${port}`);
 
 /**
 * Event listener for HTTP server "error" event.

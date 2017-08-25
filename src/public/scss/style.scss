@@ -1,23 +1,81 @@
-$font-stack:    Helvetica, sans-serif;
+@import 'panes';
+
+$font-stack:    Roboto, Helvetica, Arial, sans-serif;
 $primary-color: #333;
+$header-height: 73px;
+$footer-height: 10px;
+$tab-border-color: #ccc;
+// $tab-color: #ccc;
+$tab-hover-color: #ddd;
+$tab-background-color: #eee;
+$lilly-green: #00AF3F;
+$lilly-green75: #09C570;
+$lilly-green50: #7FDA9E;
+$lilly-green25: #C2EDCE;
+$lilly-darkGreen: #275E37;
+$lilly-darkGreen75: #5A8365;
+$lilly-darkGreen50: #90AB95;
+$lilly-darkGreen25: #C7D4C8;
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+h4.title {
+  font-family: $font-stack;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  margin: 10px 12px 10px 12px;
+}
+.header.p-row { height: $header-height; top: 0; }
+.body.p-row { top: $header-height; bottom: $footer-height; }
+.footer.p-row { height: $footer-height; bottom: 0; }
+.hot-container { height: 100%; width: 100%; overflow: hidden; }
+
+div.header { background-color: $lilly-green75; }
+div.footer { background-color: $lilly-green75; }
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    // border: 1px solid $tab-border-color;
+    // background-color: $tab-color;
 }
 
-.padding-top{
-  padding-top: 20px;
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 8px;
+    transition: 0.3s;
+    font-size: 14px;
 }
 
-.padding-bottom{
-  padding-bottom: 20px;
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: $lilly-green50;
 }
 
-.padding-left{
-  padding-left: 20px;
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: $lilly-green25;
 }
 
-.padding-right{
-  padding-right: 20px;
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 0px 0px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

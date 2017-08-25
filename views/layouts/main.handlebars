@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Instrument Tracking Front-end">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		<title>Web Accelerator</title>
+		<title>Instrument Tracking</title>
 
 		<meta name="mobile-web-app-capable" content="yes">
 
@@ -15,14 +15,21 @@
 
     <meta name="msapplication-TileColor" content="#3372DF">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="vendor/material.css">
-		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+		<link rel="stylesheet" href="vendor/HOT-dist/handsontable.full.min.css" type="text/css" media="screen" />
 
     <script src="vendor/material.js"></script>
+    <script src="vendor/HOT-dist/handsontable.full.min.js"></script>
+    <script src="js/bundle.js"></script>
+
 	</head>
 	<body>
-		{{>header}}
-		{{{body}}}
-		{{>footer}}
+    {{>header}}
+    {{{body}}}
+    {{>footer}}
 	</body>
 </html>

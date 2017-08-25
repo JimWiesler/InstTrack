@@ -1,11 +1,120 @@
-.padding-top {
-  padding-top: 20px; }
+/* CSS for generic web app pane layout in panes.css - see http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/ */
+.p-page {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
 
-.padding-bottom {
-  padding-bottom: 20px; }
+.p-row, .p-col, .p-page {
+  overflow: hidden;
+  position: absolute; }
 
-.padding-left {
-  padding-left: 20px; }
+.p-row {
+  left: 0;
+  right: 0; }
 
-.padding-right {
-  padding-right: 20px; }
+.p-col {
+  top: 0;
+  bottom: 0; }
+
+.p-scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.p-scroll-y {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.p-fill, .p-pane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; }
+
+.p-pane {
+  display: none; }
+
+/* Workaround: in landscape mode, IEMobile makes bottom toolbar overlap the page, so shorten the page by 75px to compensate */
+.p-iemobile .p-page {
+  bottom: -6px; }
+
+@media screen and (orientation: landscape) {
+  .p-iemobile .p-page {
+    bottom: 75px; } }
+
+h4.title {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  margin: 10px 12px 10px 12px; }
+
+.header.p-row {
+  height: 73px;
+  top: 0; }
+
+.body.p-row {
+  top: 73px;
+  bottom: 10px; }
+
+.footer.p-row {
+  height: 10px;
+  bottom: 0; }
+
+.hot-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+div.header {
+  background-color: #09C570; }
+
+div.footer {
+  background-color: #09C570; }
+
+/* Style the tab */
+div.tab {
+  overflow: hidden; }
+
+/* Style the buttons inside the tab */
+div.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 8px;
+  transition: 0.3s;
+  font-size: 14px; }
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+  background-color: #7FDA9E; }
+
+/* Create an active/current tablink class */
+div.tab button.active {
+  background-color: #C2EDCE; }
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 0px 0px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; }
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

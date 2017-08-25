@@ -34,7 +34,7 @@ const authenticatedRoutes = require('./lib/routes/authenticated-routes');
 
 // Configure the express app
 app.use(morgan('combined'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({
   extended: false,
 }));

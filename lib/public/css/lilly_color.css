@@ -1,0 +1,319 @@
+/*      Lilly Brand Colors CSS 						  *
+        Author : ramachandran_srinath@lilly.com       *
+		Team : Cirrus       						  */
+.lilly-red {
+  background-color: #D52B1E; }
+
+.lilly-redText {
+  color: #D52B1E; }
+
+.lilly-mediumGray {
+  background-color: #A59D95; }
+
+.lilly-mediumGrayText {
+  color: #A59D95; }
+
+.lilly-darkGray {
+  background-color: #82786F; }
+
+.lilly-darkGrayText {
+  color: #82786F; }
+
+/* Neutrals */
+.lilly-lightGray {
+  background-color: #D5D2CA; }
+
+.lilly-lightGrayText {
+  color: #D5D2CA; }
+
+.lilly-khaki {
+  background-color: #D3BF96; }
+
+.lilly-khakiText {
+  color: #D3BF96; }
+
+/* Darks */
+.lilly-brown {
+  background-color: #4E2E2D; }
+
+.lilly-brownText {
+  color: #4E2E2D; }
+
+.lilly-darkGreen {
+  background-color: #275E37; }
+
+.lilly-darkGreenText {
+  color: #275E37; }
+
+.lilly-darkBlue {
+  background-color: #263F6A; }
+
+.lilly-darkBlueText {
+  color: #263F6A; }
+
+/* Brights */
+.lilly-orange {
+  background-color: #FF6D22; }
+
+.lilly-orangeText {
+  color: #FF6D22; }
+
+.lilly-yellow {
+  background-color: #FED100; }
+
+.lilly-yellowText {
+  color: #FED100; }
+
+.lilly-green {
+  background-color: #00AF3F; }
+
+.lilly-greenText {
+  color: #00AF3F; }
+
+.lilly-blue {
+  background-color: #00A1DE; }
+
+.lilly-blueText {
+  color: #00A1DE; }
+
+.lilly-purple {
+  background-color: #B1059D; }
+
+.lilly-purpleText {
+  color: #B1059D; }
+
+/* Primary Color Shades */
+.lilly-red75 {
+  background-color: #F36A50; }
+
+.lilly-red50 {
+  background-color: #FE9E87; }
+
+.lilly-red25 {
+  background-color: #FFCFC1; }
+
+.lilly-red75Text {
+  color: #F36A50; }
+
+.lilly-red50Text {
+  color: #FE9E87; }
+
+.lilly-red25Text {
+  color: #FFCFC1; }
+
+.lilly-mediumGray75 {
+  background-color: #BDB4AE; }
+
+.lilly-mediumGray50 {
+  background-color: #D3CCC8; }
+
+.lilly-mediumGray25 {
+  background-color: #EAE5E3; }
+
+.lilly-mediumGray75Text {
+  background-color: #BDB4AE; }
+
+.lilly-mediumGray50Text {
+  background-color: #D3CCC8; }
+
+.lilly-mediumGray25Text {
+  background-color: #EAE5E3; }
+
+.lilly-darkGray75 {
+  background-color: #A39891; }
+
+.lilly-darkGray50 {
+  background-color: #C1B9B4; }
+
+.lilly-darkGray25 {
+  background-color: #E0DBD9; }
+
+.lilly-darkGray75Text {
+  background-color: #A39891; }
+
+.lilly-darkGray50Text {
+  background-color: #C1B9B4; }
+
+.lilly-darkGray25Text {
+  background-color: #E0DBD9; }
+
+/* Secondary Color Shades */
+.lilly-lightGray75 {
+  background-color: #DAD2CB; }
+
+.lilly-lightGray50 {
+  background-color: #E7E1DC; }
+
+.lilly-lightGray25 {
+  background-color: #F3F0ED; }
+
+.lilly-lightGray75Text {
+  color: #DAD2CB; }
+
+.lilly-lightGray50Text {
+  color: #E7E1DC; }
+
+.lilly-lightGray25Text {
+  color: #F3F0ED; }
+
+.lilly-khaki75 {
+  background-color: #DEC9A4; }
+
+.lilly-khaki50 {
+  background-color: #EADBC1; }
+
+.lilly-khaki25 {
+  background-color: #F5ECDF; }
+
+.lilly-khaki75Text {
+  color: #DEC9A4; }
+
+.lilly-khaki50Text {
+  color: #EADBC1; }
+
+.lilly-khaki25Text {
+  color: #F5ECDF; }
+
+.lilly-brown75 {
+  background-color: #7C5F5B; }
+
+.lilly-brown50 {
+  background-color: #A7918E; }
+
+.lilly-brown25 {
+  background-color: #D3C7C4; }
+
+.lilly-brown75Text {
+  color: #7C5F5B; }
+
+.lilly-brown50Text {
+  color: #A7918E; }
+
+.lilly-brown25Text {
+  color: #D3C7C4; }
+
+.lilly-darkGreen75 {
+  background-color: #5A8365; }
+
+.lilly-darkGreen50 {
+  background-color: #90AB95; }
+
+.lilly-darkGreen25 {
+  background-color: #C7D4C8; }
+
+.lilly-darkGreen75Text {
+  color: #5A8365; }
+
+.lilly-darkGreen50Text {
+  color: #90AB95; }
+
+.lilly-darkGreen25Text {
+  color: #C7D4C8; }
+
+.lilly-darkBlue75 {
+  background-color: #566284; }
+
+.lilly-darkBlue50 {
+  background-color: #8C93AB; }
+
+.lilly-darkBlue25 {
+  background-color: #C5C7D4; }
+
+.lilly-darkBlue75Text {
+  color: #566284; }
+
+.lilly-darkBlue50Text {
+  color: #8C93AB; }
+
+.lilly-darkBlue25Text {
+  color: #C5C7D4; }
+
+.lilly-orange75 {
+  background-color: #FF9352; }
+
+.lilly-orange50 {
+  background-color: #FFB88B; }
+
+.lilly-orange25 {
+  background-color: #FFDCC3; }
+
+.lilly-orange75Text {
+  color: #FF9352; }
+
+.lilly-orange50Text {
+  color: #FFB88B; }
+
+.lilly-orange25Text {
+  color: #FFDCC3; }
+
+.lilly-yellow75 {
+  background-color: #FFDC45; }
+
+.lilly-yellow50 {
+  background-color: #FFE789; }
+
+.lilly-yellow25 {
+  background-color: #FFF3C4; }
+
+.lilly-yellow75Text {
+  color: #FFDC45; }
+
+.lilly-yellow50Text {
+  color: #FFE789; }
+
+.lilly-yellow25Text {
+  color: #FFF3C4; }
+
+.lilly-green75 {
+  background-color: #09C570; }
+
+.lilly-green50 {
+  background-color: #7FDA9E; }
+
+.lilly-green25 {
+  background-color: #C2EDCE; }
+
+.lilly-green75Text {
+  color: #09C570; }
+
+.lilly-green50Text {
+  color: #7FDA9E; }
+
+.lilly-green25Text {
+  color: #C2EDCE; }
+
+.lilly-blue75 {
+  background-color: #5DB8E7; }
+
+.lilly-blue50 {
+  background-color: #9CCFEF; }
+
+.lilly-blue25 {
+  background-color: #D0E7F7; }
+
+.lilly-blue75Text {
+  color: #5DB8E7; }
+
+.lilly-blue50Text {
+  color: #9CCFEF; }
+
+.lilly-blue25Text {
+  color: #D0E7F7; }
+
+.lilly-purple75 {
+  background-color: #D563B9; }
+
+.lilly-purple50 {
+  background-color: #E799D0; }
+
+.lilly-purple25 {
+  background-color: #F5CCE7; }
+
+.lilly-purple75Text {
+  color: #D563B9; }
+
+.lilly-purple50Text {
+  color: #E799D0; }
+
+.lilly-purple25Text {
+  color: #F5CCE7; }
