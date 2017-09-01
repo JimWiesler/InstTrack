@@ -12,6 +12,9 @@ const mocha = require('gulp-mocha');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 const pump = require('pump');
+const rename = require('gulp-rename');
+const glob = require('glob');
+const es = require('event-stream');
 
 /*  -----------------------  */
 
@@ -42,7 +45,6 @@ gulp.task('babelify-web', () => {
   })).pipe(gulp.dest('lib/web/'));
 });
 
-
 /*  -----------------------  */
 
 /* BROWSERIFY TASKS  */
@@ -50,24 +52,30 @@ gulp.task('babelify-web', () => {
 /*  Browserify turns front end modules into a single bundle.js. It reads the ES6
     files found in the src directory and then outputs the bundle.js file to
     public/js to in the lib be rendered on the browser. */
-gulp.task('browserify', () => {
-  return browserify('src/client-controllers/main.js')
-        .transform('babelify')
-        .bundle()
-        .pipe(source('bundle.js')) // this is the output file name
-        .pipe(gulp.dest('./lib/public/js/')); // and this is where it ends up
-});
 // gulp.task('browserify', () => {
-//   gulp.src('src/client-controllers/main.js', { read: false })
-//     .pipe(browserify({
-//       insertGlobals: true,
-//       debug: true,
-//       standalone: 'main' }))
-//    .transform('babelify')
-    // .bundle()
-    // .pipe(source('bundle.js')) // this is the output file name
-    // .pipe(gulp.dest('./lib/public/js/')); // and this is where it ends up
+//   return browserify('src/client-controllers/main.js')
+//         .transform('babelify')
+//         .bundle()
+//         .pipe(source('bundle.js')) // this is the output file name
+//         .pipe(gulp.dest('./lib/public/js/')); // and this is where it ends up
 // });
+// see https://fettblog.eu/gulp-browserify-multiple-bundles/
+gulp.task('browserify', (done) => {
+  glob('src/client-controllers/main-**.js', (err, files) => {
+    if (err) done(err);
+    const tasks = files.map((entry) => {
+      const filename = entry.replace(/^.*[\\/]/, '');
+      console.log(`Browserify ${entry} to ${filename.replace('.js', '')}.bundle.js`);
+      return browserify({ entries: [entry] })
+        .bundle()
+        .pipe(source(filename))
+        .pipe(rename({ extname: '.bundle.js' }))
+        .pipe(gulp.dest('./lib/public/js'));
+    });
+    es.merge(tasks).on('end', done);
+  });
+});
+
 /*  -----------------------  */
 
 /* IMAGE COMPRESSION TASKS  */

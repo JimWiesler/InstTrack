@@ -7,7 +7,7 @@ import auth from 'cirrus-auth-module';
 // Importing the server side modules.
 import testFile from '../server-controllers/test';
 import db from '../server-controllers/database';
-import buildQuery from './buildQuery';
+import buildQuery from '../server-controllers/buildQuery';
 
 const router = express.Router();
 
@@ -32,7 +32,11 @@ router.get('/about', (req, res) => {
 });
 
 router.get('/StatusEntry', (req, res) => {
-  res.render('StatusEntry');
+  res.render('StatusEntry', { route: 'StatusEntry' });
+});
+
+router.get('/StatusEntry2', (req, res) => {
+  res.render('StatusEntry2', { route: 'StatusEntry2' });
 });
 
 router.get('/getTable', (req, res) => {
