@@ -155,16 +155,12 @@ class HOTTable {
 
   HOTLogicalRowsToPhysical(logical) {
     let physical;
-    if (typeof this.HOT.sortColumn === 'undefined' ||
-      typeof this.HOT.sortIndex === 'undefined' ||
-      this.HOT.sortIndex.length === 0) {
-      physical = logical; // NO sorting so no translation
-    } else {
-      physical = this.HOT.sortIndex[logical][0];
-    }
+    // workaround for apparent row to dataset row from Handsontable forum
+    // https://forum.handsontable.com/t/filter-and-row-index-pro/406/2
+    this.HOT.addHookOnce('modifyRow', (rowName) => { physical = rowName; });
+    this.HOT.runHooks('modifyRow', logical);
     return physical;
   }
-
 
   // change is like [[0,"reviewer",null,"Mike"]] or [[row, colName, old, new]]
   handleHOTChanges(change, source) {
