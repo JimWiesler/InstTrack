@@ -1,7 +1,7 @@
 const FK = require('./ForeignKeyReference.js');
 const HT = require('./HOTTable.js');
 
-const reviewerSource = ['Joe', 'Mike'];
+const reviewerSource = ['Amanda', 'Joe', 'Mike'];
 const dt = new FK({
   name: 'dispostion_type',
   source: { urlRoot: 'page', url: 'getTable?table=disposition_type' },
